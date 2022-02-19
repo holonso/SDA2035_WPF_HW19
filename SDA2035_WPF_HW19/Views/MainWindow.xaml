@@ -1,0 +1,29 @@
+﻿<Window x:Class="SDA2035_WPF_HW19.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SDA2035_WPF_HW19"
+        xmlns:vm="clr-namespace:SDA2035_WPF_HW19.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="320" Width="350">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <StackPanel>
+        <Label Content="Введите значение радиуса окружности:"
+               Margin="10"/>
+        <TextBox Margin="10,0,10,10"
+                 Padding="5"
+                 Text="{Binding Path=Radius}"/>
+        <Button Content="Рассчитать значение длины окружности:"
+                Margin="10,0,10,0"
+                Padding="5"
+                Command="{Binding Path=CircleLengthCommand}"/>
+        <Label Content="Длина окружности равна:"
+               Margin="10"/>
+        <TextBox Margin="10,0,10,10"
+                 Padding="5"
+                 Text="{Binding Path=CircleLength}"/>
+    </StackPanel>
+</Window>
